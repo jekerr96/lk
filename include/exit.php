@@ -1,0 +1,13 @@
+<?
+session_start();
+					unset($_SESSION["type"]);
+					unset($_SESSION["id"]);
+					unset($_SESSION["id_clients"]);
+					unset($_SESSION["email"]);
+					unset($_SESSION["phone"]);
+					unset($_SESSION["messeger"]);
+					unset($_SESSION["fio"]);
+					unset($_SESSION["date_access"]);
+					unset($_SESSION["date_denied"]);
+					unset($_SESSION["avatar"]);
+					unset($_SESSION["block"]);
