@@ -10,6 +10,7 @@
 <?
 	include 'include/menu.php';
 ?>
+<a href=""></a>
 <div class="content">
 	<div class="subdivision">
 		<h2>Клиент</h2>
@@ -28,7 +29,7 @@
 		</select>
 
 	<div class="insert_subdivision">
-		
+
 	</div>
 
 	</div>
