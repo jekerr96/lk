@@ -10,7 +10,7 @@
 <?
 	include 'include/menu.php';
 ?>
-<a href=""></a>
+<a href="" class="link_add_subdivision"></a>
 <div class="content">
 	<div class="subdivision">
 		<h2>Клиент</h2>

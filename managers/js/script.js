@@ -30,9 +30,12 @@ $(document).ready(function(){
 		var id = $(this).val();
 		if(id == -1){
 			$(".insert_subdivision").html("");
+			$(".link_add_subdivision").attr("href", "");
+			$(".link_add_subdivision").html("");
 			return;
 		}
-
+		$(".link_add_subdivision").attr("href", "add_subdivision.php?id=" + id);
+		$(".link_add_subdivision").html("Добавить");
 		$.ajax({
 			type: "POST",
 			url: "include/select_subdivision.php",
@@ -129,4 +132,6 @@ $(document).ready(function(){
 			}
 		});
 	});
+
+
 });
