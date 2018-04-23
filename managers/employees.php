@@ -11,6 +11,7 @@
 	include 'include/menu.php';
 ?>
 <div class="content">
+	<a href="" class="link_add_employee"></a>
 	<div class="employees">
 		<h2>Клиент</h2>
 		<select class="select_employees">
@@ -28,7 +29,7 @@
 		</select>
 
 	<div class="insert_employees">
-		
+
 	</div>
 
 	</div>

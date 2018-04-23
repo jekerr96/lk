@@ -52,9 +52,12 @@ $(document).ready(function(){
 		var id = $(this).val();
 		if(id == -1){
 			$(".insert_employees").html("");
+			$(".link_add_employee").attr("href", "");
+			$(".link_add_employee").html("");
 			return;
 		}
-
+		$(".link_add_employee").attr("href", "add_employee.php?id=" + id);
+		$(".link_add_employee").html("Добавить");
 		$.ajax({
 			type: "POST",
 			url: "include/select_employees.php",
