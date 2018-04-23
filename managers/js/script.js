@@ -48,6 +48,28 @@ $(document).ready(function(){
 		});
 	});
 
+	$(".select_trips").change(function(){
+		var id = $(this).val();
+		if(id == -1){
+			$(".insert_trips").html("");
+			$(".link_add_trips").attr("href", "");
+			$(".link_add_trips").html("");
+			return;
+		}
+		$(".link_add_trips").attr("href", "add_trips.php?id=" + id);
+		$(".link_add_trips").html("Добавить");
+		$.ajax({
+			type: "POST",
+			url: "include/select_trips.php",
+			data: "id=" + id,
+			dataType: "html",
+			cache: false,
+			success: function(data) {
+				$(".insert_trips").html(data);
+			}
+		});
+	});
+
 	$(".select_employees").change(function(){
 		var id = $(this).val();
 		if(id == -1){

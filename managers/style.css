@@ -8,7 +8,7 @@ body{
 }
 .nav {
 	padding: 20px 0;
-	
+
 }
 .nav ul {
 	margin: 0;
@@ -41,7 +41,7 @@ body{
 		position: relative;
 		min-height: 40px;
 		padding: 10px 0;
-	}	
+	}
 	.nav ul {
 		width: 180px;
 		margin-top: 10px;
@@ -72,7 +72,7 @@ body{
 		background: none;
 		color: #666;
 	}
- 
+
 	/* при наведении на пункты меню */
 	.nav ul:hover {
 		background-image: none;
@@ -139,7 +139,7 @@ body{
 	font-weight: 800;
 	font-size: 20px;
 	text-shadow: 1px 1px rgba(255,255,255,0.3);
-	text-transform: uppercase;	
+	text-transform: uppercase;
 	border-left: 1px solid rgba(0,0,0,0.2);
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -238,10 +238,10 @@ text-align: center;
 	display: inline-block;
 }
 .contact_form li{
-	padding:12px; 
+	padding:12px;
 	border-bottom:1px solid #eee;
 	position:relative;
-} 
+}
 .contact_form li:first-child, .contact_form li:last-child {
 	border-bottom:1px solid #777;
 }
@@ -252,8 +252,8 @@ text-align: center;
 	display: inline;
 }
 .required_notification {
-	color:#d45252; 
-	margin:5px 0 0 0; 
+	color:#d45252;
+	margin:5px 0 0 0;
 	display:inline;
 	float:right;
 }
@@ -266,46 +266,46 @@ text-align: center;
 	float:left;
 	padding:3px;
 }
-.contact_form input, .contact_form select, .select_subdivision, .select_employees {
-	height:20px; 
-	width:220px; 
+.contact_form input, .contact_form select, .select_subdivision, .select_employees, .select_trips {
+	height:20px;
+	width:220px;
 	padding:5px 8px;
 }
 .contact_form textarea {padding:8px; width:300px;}
 
 	/* form element visual styles */
-	.contact_form input, .contact_form textarea, .contact_form select, .select_subdivision, .select_employees { 
+	.contact_form input, .contact_form textarea, .contact_form select, .select_subdivision, .select_employees, .select_trips {
 		border:1px solid #aaa;
 		box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
 		border-radius:2px;
 		padding-right:30px;
-		-moz-transition: padding .25s; 
-		-webkit-transition: padding .25s; 
+		-moz-transition: padding .25s;
+		-webkit-transition: padding .25s;
 		-o-transition: padding .25s;
 		transition: padding .25s;
 	}
-	.contact_form input:focus, .contact_form textarea:focus, .contact_form select:focus, .select_subdivision:focus, .select_employees:focus {
-		background: #fff; 
-		border:1px solid #555; 
-		box-shadow: 0 0 3px #aaa; 
+	.contact_form input:focus, .contact_form textarea:focus, .contact_form select:focus, .select_subdivision:focus, .select_employees:focus, .select_trips:focus {
+		background: #fff;
+		border:1px solid #555;
+		box-shadow: 0 0 3px #aaa;
 		padding-right:70px;
 	}
 
-/* === HTML5 validation styles === */	
-.contact_form input:required, .contact_form textarea:required, .contact_form select:required, .select_subdivision:required, .select_employees:required {
+/* === HTML5 validation styles === */
+.contact_form input:required, .contact_form textarea:required, .contact_form select:required, .select_subdivision:required, .select_employees:required, .select_trips:required {
 	background: #fff url(images/red_asterisk.png) no-repeat 98% center;
 }
-.contact_form input:required:valid, .contact_form textarea:required:valid, .contact_form select:required:valid, .select_subdivision:required:valid, .select_employees:required:valid {
+.contact_form input:required:valid, .contact_form textarea:required:valid, .contact_form select:required:valid, .select_subdivision:required:valid, .select_employees:required:valid, .select_trips:required:valid {
 	background: #fff url(images/valid.png) no-repeat 98% center;
 	box-shadow: 0 0 5px #5cd053;
 	border-color: #28921f;
 }
-.contact_form input:focus:invalid, .contact_form textarea:focus:invalid, .contact_form select:focus:invalid, .select_subdivision:focus:invalid, .select_employeesfocus:invalid {
+.contact_form input:focus:invalid, .contact_form textarea:focus:invalid, .contact_form select:focus:invalid, .select_subdivision:focus:invalid, .select_employees:focus:invalid, .select_trips:focus:invalid {
 	background: #fff url(images/invalid.png) no-repeat 98% center;
 	box-shadow: 0 0 5px #d45252;
 	border-color: #b03535
 }
-.contact_form select, .select_subdivision, .select_employees{
+.contact_form select, .select_subdivision, .select_employees, .select_trips{
 	height: 35px;
 	width: 260px;
 }
@@ -337,7 +337,7 @@ text-align: center;
 .select_subdivision:focus + .form_hint {display: inline;}
 .select_subdivision:required:valid + .form_hint {background: #28921f;}
 .select_subdivision:required:valid + .form_hint::before {color:#28921f;}
-	
+
 /* === Button Style === */
 .btn_submit, input.btn_submit{
 	background-color: #68b12f;
@@ -366,23 +366,23 @@ text-align: center;
 	text-shadow: 0 -1px 0 #396715;
 	display: inline-block;
 	user-select: none;
-	
+
 }
 input.btn_submit{
 	height: 30px;
 }
 .btn_submit:hover, .btn_submit:hover{
 	opacity:.85;
-	cursor: pointer; 
+	cursor: pointer;
 }
 .btn_submit:active, .btn_submit:active{
 	border: 1px solid #20911e;
-	box-shadow: 0 0 10px 5px #356b0b inset; 
+	box-shadow: 0 0 10px 5px #356b0b inset;
 	-webkit-box-shadow:0 0 10px 5px #356b0b inset ;
 	-moz-box-shadow: 0 0 10px 5px #356b0b inset;
 	-ms-box-shadow: 0 0 10px 5px #356b0b inset;
 	-o-box-shadow: 0 0 10px 5px #356b0b inset;
-	
+
 }
 .errors_add_employee, .errors_add_subdivision{
 	color: red;
@@ -468,7 +468,7 @@ input.btn_submit{
 	font-weight: 800;
 	font-size: 20px;
 	text-shadow: 1px 1px rgba(255,255,255,0.3);
-	text-transform: uppercase;	
+	text-transform: uppercase;
 	border-left: 1px solid rgba(0,0,0,0.2);
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -571,7 +571,7 @@ input.btn_submit{
 	font-weight: 800;
 	font-size: 20px;
 	text-shadow: 1px 1px rgba(255,255,255,0.3);
-	text-transform: uppercase;	
+	text-transform: uppercase;
 	border-left: 1px solid rgba(0,0,0,0.2);
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -665,7 +665,7 @@ input.btn_submit{
 	font-weight: 800;
 	font-size: 20px;
 	text-shadow: 1px 1px rgba(255,255,255,0.3);
-	text-transform: uppercase;	
+	text-transform: uppercase;
 	border-left: 1px solid rgba(0,0,0,0.2);
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -755,4 +755,14 @@ input.btn_submit{
 }
 .employees{
 	text-align: center;
+}
+.trips{
+	text-align: center;
+}
+.table_trips_line{
+	cursor: pointer;
+}
+.table_trips_line:hover{
+	cursor: pointer;
+	text-decoration: underline;
 }
