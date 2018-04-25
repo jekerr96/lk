@@ -158,5 +158,9 @@ $(document).ready(function(){
 		});
 	});
 
+	$(".insert_trips").on("click", ".table_trips_line", function(){
+		var id = $(this).attr("ids");
+		document.location.href = "show_trip.php?id=" + id;
+	});
 
 });

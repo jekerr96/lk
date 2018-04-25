@@ -618,10 +618,10 @@ input.btn_submit{
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#668e00', endColorstr='#8fc800',GradientType=0 );
 }
 
-.table_trips td{
+.table_trips td not(.show_trip_line){
 	cursor: pointer;
 }
-.table_trips tr:hover td{
+.table_trips tr:hover td not(.show_trip_line){
 	text-decoration: underline;
 }
 
@@ -763,6 +763,5 @@ input.btn_submit{
 	cursor: pointer;
 }
 .table_trips_line:hover{
-	cursor: pointer;
 	text-decoration: underline;
 }

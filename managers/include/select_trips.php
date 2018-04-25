@@ -39,7 +39,6 @@
 				$oplata = "-";
 			}
 			echo '
-		<tr idd="'.$row["id"].'">
 		<tr class="table_trips_line" ids="'.$row["id"].'">
 		<td>'.$row["description"].'</td>
 		<td>'.$row["status"].'</td>
