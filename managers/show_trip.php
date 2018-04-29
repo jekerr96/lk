@@ -72,6 +72,18 @@
 
 		</table>
 
+		<div class="add_new_service">
+			<h2>Новая услуга</h2>
+			<select class="type_add_service" name="">
+				<option value="1">Авиабилет</option>
+				<option value="2">Автобилет</option>
+				<option value="3">Железнодорожный билет</option>
+				<option value="4">Гостинница</option>
+			</select>
+			<div class="btn_add_new_service" idt="<? echo $id; ?>">
+				Добавить
+			</div>
+		</div>
 		<div id="show_trip_servies">
 			<?
 			$query = "SELECT * FROM services WHERE id_trips = $id";
@@ -318,6 +330,7 @@
 
 				$query_employee = "SELECT surname, name, patronymic, zagran_surname, zagran_name, zagran_patronymic, series_number, zagran_term FROM employees $select";
 				?>
+				<br>
 				<table class="table_employees table_trip_avia">
 				<th>ФИО</th>
 				<th>Загран ФИО</th>

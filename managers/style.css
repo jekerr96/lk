@@ -192,23 +192,22 @@ body{
 font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
 text-align: left;
 border-collapse: separate;
-border-spacing: 5px;
-background: #ECE9E0;
-color: #656665;
-border: 16px solid #ECE9E0;
-border-radius: 20px;
+border-spacing: 2px;
+background: #eee;
+border: 6px solid #eee;
+border-radius: 5px;
 display: inline-block;
 margin-left: 10px;
 margin-right: 10px;
 }
 .table_employees th {
 text-align: center;
-font-size: 18px;
-padding: 5px;
+//font-size: 18px;
+padding: 2px;
 }
 .table_employees td {
-background: #F5D7BF;
-padding: 10px;
+background: #e0e0e0;
+padding: 2px;
 text-align: center;
 }
 

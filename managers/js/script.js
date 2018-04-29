@@ -163,4 +163,24 @@ $(document).ready(function(){
 		document.location.href = "show_trip.php?id=" + id;
 	});
 
+	$(".btn_add_new_service").click(function(){
+		var type = $(".type_add_service").val();
+		var id = $(this).attr("idt");
+		switch (type) {
+			case "1":
+				document.location.href = "add_avia.php?id=" + id;
+				break;
+			case "2":
+				document.location.href = "add_avto.php?id=" + id;
+				break;
+			case "3":
+				document.location.href = "add_jd.php?id=" + id;
+				break;
+			case "4":
+				document.location.href = "add_hotel.php?id=" + id;
+				break;
+			default:
+
+		}
+	})
 });

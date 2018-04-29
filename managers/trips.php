@@ -8,6 +8,7 @@
   <body>
     <? include 'include/menu.php'; ?>
     <div class="content">
+      <a class="link_add_trips" href="#"></a>
       <div class="trips">
         <h2>Клиент</h2>
         <select class="select_trips">
