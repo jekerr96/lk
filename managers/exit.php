@@ -11,6 +11,8 @@ session_start();
 					unset($_SESSION["date_denied"]);
 					unset($_SESSION["avatar"]);
 					unset($_SESSION["block"]);
+
+					setcookie("manager", "", time() - 100);
 echo '<script type="text/javascript">
 window.location = "/managers/auth.php"
 </script>';

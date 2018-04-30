@@ -24,13 +24,13 @@
 	    <li class="subdivision"><a href="/subdivision">Подразделения</a></li>
 	    <li class="trips"><a href="/trips">Деловые поездки</a></li>
 	    <li class="contacts"><a href="/contacts">Контакты</a></li>
-	    <li class="exit"><a href="/exit">Выход</a></li>
+	    <li class="exit"><a attr="exit" href="/exit.php">Выход</a></li>
 	</ul>
 </nav>
 </div>
 
 <div class="content">
-	
+
 </div>
 
 </body>

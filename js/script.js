@@ -6,14 +6,13 @@ $(document).ready(function(){
 		//console.log(href[3]);
 		$(".current").removeClass("current");
 		switch(href[3]){
-			case "" : 
-				url += "index.php"; 
-				$(".index").addClass("current"); 
+			case "" :
+				url += "index.php";
+				$(".index").addClass("current");
 				break;
-
-			case "subdivision" : 
-				url += "subdivision.php"; 
-				$(".subdivision").addClass("current"); 
+			case "subdivision" :
+				url += "subdivision.php";
+				$(".subdivision").addClass("current");
 				break;
 			case "employees":
 				url += "employees.php";
@@ -39,7 +38,7 @@ $(document).ready(function(){
 				url += "add_trips.php";
 				$('.trips').addClass("current");
 				break;
-			
+
 		}
 		//console.log(url);
 		$.ajax({
@@ -48,35 +47,26 @@ $(document).ready(function(){
 			data: "",
 			dataType: "html",
 			cache: false,
-			success: function(data) { 
+			success: function(data) {
 				$(".content").html("");
 				$(".content").append(data);
 			}
 		});
 	}
-$(".exit > a").click(function(){
-		$.ajax({
-			type: "POST",
-			url: "include/exit.php",
-			data: "",
-			dataType: "html",
-			cache: false,
-			success: function(data) { 
-				window.location = "/auth.php";
-			}
-		});
-	});
+
 	$(".nav > ul > li > a").click(function(){
+		if($(this).attr("attr") == "exit")
+			document.location.href = "/exit.php";
 		var href = $(this).attr("href");
-		window.history.pushState(new Date(), "Подразделения", href); 
+		window.history.pushState(new Date(), "Подразделения", href);
 		check_current();
 		return false;
 	});
-	
+
 
 	$(".content").on("click", ".edit_employee", function(){
 		var ide = $(this).attr("ide");
-		window.history.pushState(new Date(), "Изменение сотрудника", "/edit_employee"); 
+		window.history.pushState(new Date(), "Изменение сотрудника", "/edit_employee");
 		var url = "include/edit_employee.php";
 		$('.employees').addClass("current");
 		$.ajax({
@@ -85,7 +75,7 @@ $(".exit > a").click(function(){
 			data: "ide=" + ide,
 			dataType: "html",
 			cache: false,
-			success: function(data) { 
+			success: function(data) {
 				$(".content").html("");
 				$(".content").append(data);
 			}
@@ -101,10 +91,10 @@ $(".exit > a").click(function(){
 		$.ajax({
 			type: "POST",
 			url: "include/delete_employee.php",
-			data: "idd=" + id, 
+			data: "idd=" + id,
 			dataType: "html",
 			cache: false,
-			success: function(data) { 
+			success: function(data) {
 				if(data == 1){
 					$(del).parent().parent().remove();
 
@@ -119,7 +109,7 @@ $(".exit > a").click(function(){
 
 	$(".content").on("click", ".btn_add_employee", function(){
 		var href = "/add_employee";
-		window.history.pushState(new Date(), "Подразделения", href); 
+		window.history.pushState(new Date(), "Подразделения", href);
 		check_current();
 		return false;
 	});
@@ -146,10 +136,10 @@ $(".exit > a").click(function(){
 			data: "surname=" + surname + "&name=" + name + "&patronymic=" + patronymic +
 			"&passport=" + passport + "&place_birth=" + place_birth + "&zagran_surname=" + zagran_surname +
 			"&zagran_name=" + zagran_name + "&zagran_patronymic=" + zagran_patronymic + "&zagran_series_number=" + zagran_series_number +
-			"&zagran_term=" + zagran_term, 
+			"&zagran_term=" + zagran_term,
 			dataType: "html",
 			cache: false,
-			success: function(data) { 
+			success: function(data) {
 				if(data != 1){
 					$(".success_add_employee").html("");
 					$(".errors_add_employee").html(data);
@@ -181,10 +171,10 @@ $(".exit > a").click(function(){
 			data: "surname=" + surname + "&name=" + name + "&patronymic=" + patronymic +
 			"&passport=" + passport + "&place_birth=" + place_birth + "&zagran_surname=" + zagran_surname +
 			"&zagran_name=" + zagran_name + "&zagran_patronymic=" + zagran_patronymic + "&zagran_series_number=" + zagran_series_number +
-			"&zagran_term=" + zagran_term + "&ide="+ide, 
+			"&zagran_term=" + zagran_term + "&ide="+ide,
 			dataType: "html",
 			cache: false,
-			success: function(data) { 
+			success: function(data) {
 				if(data != 1){
 					$(".success_add_employee").html("");
 					$(".errors_add_employee").html(data);
@@ -199,7 +189,7 @@ $(".exit > a").click(function(){
 
 	$(".content").on("click", ".edit_subdivision", function(){
 		var ide = $(this).attr("ide");
-		window.history.pushState(new Date(), "Изменение подразделения", "/edit_subdivision"); 
+		window.history.pushState(new Date(), "Изменение подразделения", "/edit_subdivision");
 		var url = "include/edit_subdivision.php";
 		$('.subdivision').addClass("current");
 		$.ajax({
@@ -208,7 +198,7 @@ $(".exit > a").click(function(){
 			data: "ide=" + ide,
 			dataType: "html",
 			cache: false,
-			success: function(data) { 
+			success: function(data) {
 				$(".content").html("");
 				$(".content").append(data);
 			}
@@ -224,10 +214,10 @@ $(".exit > a").click(function(){
 		$.ajax({
 			type: "POST",
 			url: "include/delete_subdivision.php",
-			data: "idd=" + id, 
+			data: "idd=" + id,
 			dataType: "html",
 			cache: false,
-			success: function(data) { 
+			success: function(data) {
 				if(data == 1){
 					$(del).parent().parent().remove();
 				}
@@ -245,10 +235,10 @@ $(".exit > a").click(function(){
 		$.ajax({
 			type: "POST",
 			url: "include/add_subdivision_script.php",
-			data: "name=" + name, 
+			data: "name=" + name,
 			dataType: "html",
 			cache: false,
-			success: function(data) { 
+			success: function(data) {
 				if(data != 1){
 					$(".success_add_subdivision").html("");
 					$(".errors_add_subdivision").html(data);
@@ -268,10 +258,10 @@ $(".exit > a").click(function(){
 		$.ajax({
 			type: "POST",
 			url: "include/edit_subdivision_script.php",
-			data: "name=" + name + "&ide="+ide, 
+			data: "name=" + name + "&ide="+ide,
 			dataType: "html",
 			cache: false,
-			success: function(data) { 
+			success: function(data) {
 				if(data != 1){
 					$(".success_add_subdivision").html("");
 					$(".errors_add_subdivision").html(data);
@@ -286,21 +276,21 @@ $(".exit > a").click(function(){
 
 	$(".content").on("click", ".btn_add_subdivision", function(){
 		var href = "/add_subdivision";
-		window.history.pushState(new Date(), "Подразделения", href); 
+		window.history.pushState(new Date(), "Подразделения", href);
 		check_current();
 		return false;
 	});
 
 	$(".content").on("click", ".btn_add_trips", function(){
 		var href = "/add_trips";
-		window.history.pushState(new Date(), "Деловые поездки", href); 
+		window.history.pushState(new Date(), "Деловые поездки", href);
 		check_current();
 		return false;
 	});
 
 	$(".content").on("click", ".table_trips_line", function(){
 		var id = $(this).attr("ids");
-		window.history.pushState(new Date(), "Изменение подразделения", "/show_trip"); 
+		window.history.pushState(new Date(), "Изменение подразделения", "/show_trip");
 		var url = "include/show_trip.php";
 		$('.trips').addClass("current");
 		$.ajax({
@@ -309,7 +299,7 @@ $(".exit > a").click(function(){
 			data: "ids=" + id,
 			dataType: "html",
 			cache: false,
-			success: function(data) { 
+			success: function(data) {
 				$(".content").html("");
 				$(".content").append(data);
 			}
@@ -338,7 +328,7 @@ $(".exit > a").click(function(){
 		$.ajax({
 			type: "POST",
 			url: url,
-			data: "", 
+			data: "",
 			dataType: "html",
 			cache: false,
 			success: function(data) {
@@ -346,7 +336,7 @@ $(".exit > a").click(function(){
 				$(text).insertBefore(insertBefore);
 				masNumbers[number - 1] = number;
 				number++;
-				
+
 			}
 		});
 	});
@@ -359,7 +349,7 @@ $(".exit > a").click(function(){
 		$.ajax({
 			type: "POST",
 			url: "include/add_trip.php",
-			data: "description=" + description + "&form=" + form + "&term=" + term + "&address=" + address, 
+			data: "description=" + description + "&form=" + form + "&term=" + term + "&address=" + address,
 			dataType: "html",
 			cache: false,
 			success: function(data) {
@@ -370,7 +360,7 @@ $(".exit > a").click(function(){
 						if(masNumbers[i] == 0) continue;
 						var send_data = "";
 						switch($("#type" + masNumbers[i]).val()){
-							case "1": 
+							case "1":
 								var type_operation = $("#type_operation" + masNumbers[i]).val();
 								var booking_class = $("#booking_class" + masNumbers[i]).val();
 								var point_departure = $("#point_departure" + masNumbers[i]).val();
@@ -380,7 +370,7 @@ $(".exit > a").click(function(){
 								var term_booking = $("#term_booking" + masNumbers[i]).val();
 								var list_employee = $("#list_employee" + masNumbers[i]).val();
 								var special_luggage = $("#special_luggage" + masNumbers[i]).val();
-								send_data = "id_trips=" + id_add + "&type=1" + "&type_operation=" + type_operation + "&booking_class=" + booking_class + "&point_departure=" + point_departure + "&date_departure=" + date_departure + "&description=" + description + "&coment=" + coment + "&term_booking=" + term_booking + "&list_employee=" + list_employee + "&special_luggage=" + special_luggage; 
+								send_data = "id_trips=" + id_add + "&type=1" + "&type_operation=" + type_operation + "&booking_class=" + booking_class + "&point_departure=" + point_departure + "&date_departure=" + date_departure + "&description=" + description + "&coment=" + coment + "&term_booking=" + term_booking + "&list_employee=" + list_employee + "&special_luggage=" + special_luggage;
 								break;
 							case "2":
 								var type_operation = $("#type_operation" + masNumbers[i]).val();
@@ -416,11 +406,11 @@ $(".exit > a").click(function(){
 					$.ajax({
 			type: "POST",
 			url: "include/add_services.php",
-			data: send_data, 
+			data: send_data,
 			dataType: "html",
 			cache: false,
 			success: function(data_services) {
-					
+
 				}
 			});
 				}
@@ -429,7 +419,7 @@ $(".exit > a").click(function(){
 			}
 		});
 	});
-	
+
 	$(".content").on("click", ".del_services", function(){
 		var id_del = $(this).attr("id_del");
 		masNumbers[id_del - 1] = 0;
@@ -437,4 +427,3 @@ $(".exit > a").click(function(){
 	});
 
 });
-
