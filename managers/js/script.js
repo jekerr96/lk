@@ -182,5 +182,48 @@ $(document).ready(function(){
 			default:
 
 		}
-	})
+	});
+
+	$(".del_avia, .del_avto, .del_jd, .del_hotel").click(function(){
+		if(!confirm("Вы действительно хотите удалить услугу?"))
+			return;
+			var id = $(this).attr("idd");
+			var del_table = $("#" + id);
+			$.ajax({
+				type: "POST",
+				url: "include/delete_services.php",
+				data: "id=" + id,
+				dataType: "html",
+				cache: false,
+				success: function(data) {
+					if(data == 1){
+						$(del_table).remove();
+					}
+					else{
+						alert(data);
+					}
+				}
+			});
+	});
+
+	$(".del_trips").click(function(){
+		if(!confirm("Вы действительно хотите удалить деловую поездку?"))
+			return;
+		var id = $(this).attr("idd");
+		$.ajax({
+				type: "POST",
+				url: "include/delete_trips.php",
+				data: "id=" + id,
+				dataType: "html",
+				cache: false,
+				success: function(data) {
+					if(data == 1){
+						document.location.href = "trips.php";
+					}
+					else{
+						alert(data);
+					}
+				}
+			});
+	});
 });

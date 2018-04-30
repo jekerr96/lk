@@ -10,7 +10,6 @@
     $users = $_POST["users"];
 
     $query = "INSERT INTO trips (description, id_status, priority, id_users, id_form, term, address, version) VALUES ('$description', 1, 1, $users,  '$form', '$term', '$address', 1)";
-    echo $query;
     $result = mysqli_query($link, $query);
     if($result){
       $success = "Добавление прошло успешно";

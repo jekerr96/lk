@@ -90,6 +90,7 @@
 			$result = mysqli_query($link, $query);
 			if(mysqli_num_rows($result) != 0){
 				while($row = mysqli_fetch_assoc($result)){
+					echo "<div id=".$row['id'].">";
 					$type = "";
 					switch($row["type"]){
 					case 1:
@@ -349,7 +350,7 @@
 					</tr>
 					';
 				}
-				echo '</table>';
+				echo '</table></div>';
 			}
 
 
