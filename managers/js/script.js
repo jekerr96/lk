@@ -32,10 +32,12 @@ $(document).ready(function(){
 			$(".insert_subdivision").html("");
 			$(".link_add_subdivision").attr("href", "");
 			$(".link_add_subdivision").html("");
+			$(".link_add_subdivision").toggleClass("btn_add");
 			return;
 		}
 		$(".link_add_subdivision").attr("href", "add_subdivision.php?id=" + id);
 		$(".link_add_subdivision").html("Добавить");
+		$(".link_add_subdivision").toggleClass("btn_add");
 		$.ajax({
 			type: "POST",
 			url: "include/select_subdivision.php",
@@ -54,10 +56,12 @@ $(document).ready(function(){
 			$(".insert_trips").html("");
 			$(".link_add_trips").attr("href", "");
 			$(".link_add_trips").html("");
+			$(".link_add_trips").toggleClass("btn_add");
 			return;
 		}
 		$(".link_add_trips").attr("href", "add_trips.php?id=" + id);
 		$(".link_add_trips").html("Добавить");
+		$(".link_add_trips").toggleClass("btn_add");
 		$.ajax({
 			type: "POST",
 			url: "include/select_trips.php",
@@ -76,10 +80,12 @@ $(document).ready(function(){
 			$(".insert_employees").html("");
 			$(".link_add_employee").attr("href", "");
 			$(".link_add_employee").html("");
+			$(".link_add_employee").toggleClass("btn_add");
 			return;
 		}
 		$(".link_add_employee").attr("href", "add_employee.php?id=" + id);
 		$(".link_add_employee").html("Добавить");
+		$(".link_add_employee").toggleClass("btn_add");
 		$.ajax({
 			type: "POST",
 			url: "include/select_employees.php",

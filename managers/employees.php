@@ -13,7 +13,7 @@
 <div class="content">
 	<a href="" class="link_add_employee"></a>
 	<div class="employees">
-		<h2>Клиент</h2>
+		<h2 class="head_client">Клиент</h2>
 		<select class="select_employees">
 			<option value="-1">Пусто</opton>
 			<?

@@ -71,7 +71,7 @@
 		?>
 
 		</table>
-
+		<br>
 		<div class="add_new_service">
 			<h2>Новая услуга</h2>
 			<select class="type_add_service" name="">
@@ -80,7 +80,8 @@
 				<option value="3">Железнодорожный билет</option>
 				<option value="4">Гостинница</option>
 			</select>
-			<div class="btn_add_new_service" idt="<? echo $id; ?>">
+			<br>
+			<div class="btn_add_new_service btn_add" style="display: inline-block; margin-left: 0px;" idt="<? echo $id; ?>">
 				Добавить
 			</div>
 		</div>
@@ -106,7 +107,7 @@
 						$type = "Гостинница";
 						break;
 				}
-				echo "<h2>$type</h2>";
+				echo "<h2 class='head_type_service'>$type</h2>";
 				if($row["type"] == 1){
 				?>
 

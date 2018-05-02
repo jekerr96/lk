@@ -25,7 +25,7 @@
 		include 'include/menu.php';
 	?>
 	<div class="content">
-		<a href="add_user.php?id=<? echo $id ?>">Новый пользователь</a>
+		<a class="btn_add" href="add_user.php?id=<? echo $id ?>">Добавить</a>
 		<div class="show_client">
 	<?
 
@@ -64,7 +64,7 @@
 		$result_sub = mysqli_query($link, $query);
 		while($row_sub = mysqli_fetch_assoc($result_sub)){
 			echo '
-				<h1>'.$row_sub["name"].'</h1>
+				<h2 class="head_type_service">'.$row_sub["name"].'</h2>
 			';
 
 			?>

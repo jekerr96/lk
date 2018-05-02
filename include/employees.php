@@ -1,15 +1,10 @@
-<? 
+<?
 session_start();
 $id = $_SESSION["id"];
 ?>
 <div class="block_employees">
-	<div class="add_employee">
-		<div>
-			<div class="btn_add_employee green_add_employee">
-			<div class="add_employee_text">Добавить</div>
-			<div class="add_employee_plus">+</div>
-			</div>
-		</div>
+	<div class="btn_add_employee btn_add">
+		Добавить
 	</div>
 	<?
 	include 'db_connect.php';
@@ -42,7 +37,7 @@ $id = $_SESSION["id"];
 		';
 	}
 }
-	
+
 	?>
 </table>
 </div>

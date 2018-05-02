@@ -13,7 +13,7 @@
 <a href="" class="link_add_subdivision"></a>
 <div class="content">
 	<div class="subdivision">
-		<h2>Клиент</h2>
+		<h2 class="head_client">Клиент</h2>
 		<select class="select_subdivision">
 			<option value="-1">Пусто</opton>
 			<?

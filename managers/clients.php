@@ -18,21 +18,14 @@
 		include 'include/menu.php';
 	?>
 	<div class="block_clients">
-	<div class="add_clients">
-		<div>
-			<div class="btn_add_client green_btn_add green_add_button">
-			<div class="add_client_text green_button_text">Добавить</div>
-			<div class="add_client_plus green_button_plus">+</div>
-			</div>
-		</div>
-	</div>
+	<a href="add_clients.php" class="btn_add">Добавить</a>
 	<?
 	include 'include/db_connect.php';
 	$query = "SELECT * FROM clients ORDER BY id ASC";
 	$result = mysqli_query($link, $query);
 	if(mysqli_num_rows($result) != 0){
 		?>
-	
+
 	<table class="table_clients table_employees">
 	<th>Наименование</th>
 	<th>Это турагенство</th>
@@ -43,7 +36,7 @@
 		$form_settlements = "";
 		if($row["travel_agency"] == 0)
 			$travel_agency = "<image src='images/cross.png' class='its_travel_agency'/>";
-		else 
+		else
 			$travel_agency = "<image src='images/red_agenstvo.png' class='its_travel_agency'/>";
 
 		if($row["form_settlements"] == 0)

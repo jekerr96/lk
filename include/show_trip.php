@@ -10,7 +10,7 @@
 	$result = mysqli_query($link, $query);
 	if(mysqli_num_rows($result) != 0){
 		?>
-	
+
 	<table class="table_employees table_trips">
 	<th>Описание</th>
 	<th>Статус</th>
@@ -82,7 +82,7 @@
 				$type = "Гостинница";
 				break;
 		}
-		echo "<h2>$type</h2>";
+		echo "<h2 class='head_type_service'>$type</h2>";
 		if($row["type"] == 1){
 		?>
 
@@ -95,13 +95,13 @@
 	<th>Комментарий</th>
 	<th>Срок бронирования</th>
 	<?
-	
-		
+
+
 		$type_operation = "";
 		$booking_class = "";
 		$list_employee = preg_split("/,/", $row['id_employee']);
-		
-		
+
+
 		switch($row["type_operation"]){
 			case 1:
 				$type_operation = "Бронирование";
@@ -144,13 +144,13 @@
 	<th>Пункт назначения</th>
 	<th>Комментарий</th>
 	<?
-	
-		
+
+
 		$type_operation = "";
 		$type_allocation = "";
 		$list_employee = preg_split("/,/", $row['id_employee']);
-		
-		
+
+
 		switch($row["type_operation"]){
 			case 1:
 				$type_operation = "Бронирование";
@@ -197,13 +197,13 @@
 	<th>Пункт назначения</th>
 	<th>Комментарий</th>
 	<?
-	
-		
+
+
 		$type_operation = "";
 		$type_allocation = "";
 		$list_employee = preg_split("/,/", $row['id_employee']);
-		
-		
+
+
 		switch($row["type_operation"]){
 			case 1:
 				$type_operation = "Бронирование";
@@ -238,12 +238,12 @@
 	<th>Вариант питания</th>
 	<th>Срок бронирования</th>
 	<?
-	
-		
+
+
 		$accommodation_category = "";
 		$food_option = "";
 		$list_employee = preg_split("/,/", $row['id_employee']);
-		
+
 		switch($row["accommodation_category"]){
 			case 1:
 				$accommodation_category = "Стандарт";
@@ -312,9 +312,9 @@
 		}
 		echo '</table>';
 	}
-	
-	
-	
+
+
+
 	}
 ?>
 </div>

@@ -1,4 +1,4 @@
-<? 
+<?
 session_start();
 $id = $_SESSION["id"];
 $id_clients = $_SESSION["id_clients"];
@@ -6,13 +6,8 @@ $id_clients = $_SESSION["id_clients"];
 ?>
 
 <div class="block_subdivision">
-	<div class="add_subdivision">
-		<div>
-			<div class="btn_add_subdivision green_add_subdivision">
-			<div class="add_subdivision_text">Добавить</div>
-			<div class="add_subdivision_plus">+</div>
-			</div>
-		</div>
+	<div class="btn_add_subdivision btn_add">
+		Добавить
 	</div>
 <?
 	include 'db_connect.php';
@@ -20,7 +15,7 @@ $id_clients = $_SESSION["id_clients"];
 	$result = mysqli_query($link, $query);
 	if(mysqli_num_rows($result) != 0){
 		?>
-	
+
 	<table class="table_employees">
 	<th>Наименование</th>
 	<th>Действия</th>

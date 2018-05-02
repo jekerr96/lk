@@ -10,7 +10,7 @@
     <div class="content">
       <a class="link_add_trips" href="#"></a>
       <div class="trips">
-        <h2>Клиент</h2>
+        <h2 class="head_client">Клиент</h2>
         <select class="select_trips">
           <option value="-1">Пусто</opton>
           <?

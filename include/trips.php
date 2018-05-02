@@ -1,16 +1,11 @@
-<? 
+<?
 session_start();
 $id = $_SESSION["id"];
 ?>
 
 <div class="block_trips">
-	<div class="add_trips">
-		<div>
-			<div class="btn_add_trips green_add_trips">
-			<div class="add_trips_text">Добавить</div>
-			<div class="add_trips_plus">+</div>
-			</div>
-		</div>
+	<div class="btn_add_trips btn_add">
+		Добавить
 	</div>
 <?
 	include 'db_connect.php';
@@ -18,7 +13,7 @@ $id = $_SESSION["id"];
 	$result = mysqli_query($link, $query);
 	if(mysqli_num_rows($result) != 0){
 		?>
-	
+
 	<table class="table_employees table_trips">
 	<th>Описание</th>
 	<th>Статус</th>
