@@ -51,6 +51,7 @@ if(isset($_POST["sub"])){
   <head>
     <meta charset="utf-8">
     <title>Авиабилет</title>
+    <script>var page = "trip";</script>
     <? include 'include/head.php'; ?>
   </head>
   <body>

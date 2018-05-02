@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Деловые поездки</title>
+    <script>var page = "trip";</script>
     <? include 'include/head.php'; ?>
   </head>
   <body>

@@ -73,6 +73,7 @@
   <head>
     <meta charset="utf-8">
     <title>Новый пользователь</title>
+    <script>var page = "client";</script>
     <? include 'include/head.php'; ?>
   </head>
   <body>

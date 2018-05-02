@@ -33,7 +33,8 @@ if(isset($_POST["sub"])){
 <html lang="ru" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Авиабилет</title>
+    <title>Деловая поездка</title>
+    <script>var page = "trip";</script>
     <? include 'include/head.php'; ?>
   </head>
   <body>
@@ -43,7 +44,7 @@ if(isset($_POST["sub"])){
           <form action="" method="post" multiple>
 
             <li>
-                 <h2>Изменение авиабилета</h2>
+                 <h2>Изменение деловой поездки</h2>
                  <span class="required_notification">* отмечены обязательные поля</span>
             </li>
             <li>

@@ -36,6 +36,7 @@
   <head>
     <meta charset="utf-8">
     <title>Гостинница</title>
+    <script>var page = "trip";</script>
     <? include 'include/head.php'; ?>
   </head>
   <body>

@@ -23,6 +23,7 @@
 <html>
 <head>
 	<title>Подразделения</title>
+	<script>var page = "ыгившмшышщт";</script>
 	<?
 		include 'include/head.php';
 	?>
@@ -56,7 +57,7 @@
     </ul>
 
 </div>
-		
+
 
 	</div>
 </div>

@@ -34,7 +34,7 @@
     else $add .= ", NULL";
     if($zagran_term != "") $add .= ", " + $zagran_term;
     else $add .= ", NULL";
-    
+
     if($errors == ""){
     $query = "UPDATE `employees` SET `surname`= '$surname',`name`= '$name',`patronymic`= '$patronymic',`series_number`= '$passport',`place_birth`= '$place_birth',`zagran_surname`= '$zagran_surname',`zagran_name`= '$zagran_name',`zagran_patronymic`= '$zagran_patronymic',`zagran_series_number`= '$zagran_series_number',`zagran_term`= '$zagran_term' WHERE id = $id";
     $result = mysqli_query($link, $query);
@@ -65,6 +65,7 @@
 <html>
 <head>
     <title>Сотрудники</title>
+    <script>var page = "employee";</script>
     <? include 'include/head.php'; ?>
 </head>
 <body>

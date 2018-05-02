@@ -16,6 +16,7 @@
 <html>
 <head>
 	<title><? echo $row["name"]; ?></title>
+	<script>var page = "client";</script>
 	<?
 	include 'include/head.php';
 	?>

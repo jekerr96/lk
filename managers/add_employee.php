@@ -50,6 +50,7 @@ else
   <head>
     <meta charset="utf-8">
     <title>Новый сотрудник</title>
+    <script>var page = "employee";</script>
     <? include 'include/head.php'; ?>
   </head>
   <body>

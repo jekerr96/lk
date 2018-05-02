@@ -9,6 +9,7 @@
 <html>
 <head>
 	<title>Личный кабинет</title>
+	<script>var page = "index";</script>
 	<?
 		include 'include/head.php';
 	?>

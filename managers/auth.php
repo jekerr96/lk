@@ -2,7 +2,7 @@
 	session_start();
 	include 'include/db_connect.php';
 	if((isset($_SESSION['id']) && $_SESSION["type"] == "manager") || (isset($_COOKIE["manager"]))){
-		if(!isset($_SESSION["id"])){
+		if(!isset($_SESSION["id"]) || $_SESSION["type"] == "client"){
 			$id_cookie = $_COOKIE["manager"];
 			$query = "SELECT id_manager FROM auth_cookie WHERE id_cookie = '$id_cookie'";
 			$result = mysqli_query($link, $query);
@@ -61,7 +61,7 @@ window.location = "/managers/"
 					$id = $row["id"];
 					$id = sha1("wervcbdsSfs".sha1($id)."gfhfgsfdpl".time());
 					$id_manager = $row["id"];
-					setcookie("manager", $id, time() + (1000 * 3600 * 24 * 30));
+					setcookie("manager", $id, time() + (3600 * 24 * 30));
 					$query = "INSERT INTO auth_cookie(id_cookie, id_manager) VALUES('$id', '$id_manager')";
 					$result = mysqli_query($link, $query);
 					if(!$result)

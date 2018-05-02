@@ -35,6 +35,7 @@
   <head>
     <meta charset="utf-8">
     <title>Автобилет</title>
+    <script>var page = "trip";</script>
     <? include 'include/head.php'; ?>
   </head>
   <body>

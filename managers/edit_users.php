@@ -75,6 +75,7 @@
 <html>
 <head>
 	<title>Пользователи клиента</title>
+	<script>var page = "client";</script>
 	<? include 'include/head.php'; ?>
 </head>
 <body>

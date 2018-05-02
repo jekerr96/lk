@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Подразделения</title>
+	<script>var page = "subdivision";</script>
 	<?
 		include 'include/head.php';
 	?>

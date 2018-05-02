@@ -232,4 +232,44 @@ $(document).ready(function(){
 				}
 			});
 	});
+
+check_menu();
+	function check_menu(){
+		switch (page) {
+			case "index":
+					$(".menu_index").addClass("current");
+				break;
+			case "client":
+					$(".menu_clients").addClass("current");
+				break;
+			case "employee":
+					$(".menu_employees").addClass("current");
+				break;
+			case "subdivision":
+					$(".menu_subdivision").addClass("current");
+				break;
+			case "trip":
+					$(".menu_trips").addClass("current");
+				break;
+			case "contacts":
+					$(".menu_contacts").addClass("current");
+				break;
+			default:
+
+		}
+	}
+	var pull = $('#pull');
+				menu = $('nav ul');
+				menuHeight  = menu.height();
+		$(pull).on('click', function(e) {
+				e.preventDefault();
+				menu.slideToggle();
+		});
+
+		$(window).resize(function(){
+			 var w = $(window).width();
+			 if(w > 320 && menu.is(':hidden')) {
+					 menu.removeAttr('style');
+			 }
+	 });
 });

@@ -9,6 +9,7 @@
 <html>
 <head>
 	<title>Список клиентов</title>
+	<script>var page = "client";</script>
 	<?
 		include 'include/head.php';
 	?>

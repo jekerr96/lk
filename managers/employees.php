@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Сотрудники</title>
+	<script>var page = "employee";</script>
 	<?
 		include 'include/head.php';
 	?>

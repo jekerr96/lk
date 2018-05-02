@@ -23,6 +23,7 @@
   <head>
     <meta charset="utf-8">
     <title>Новое подразделение</title>
+    <script>var page = "subdivision";</script>
     <? include 'include/head.php'; ?>
   </head>
   <body>

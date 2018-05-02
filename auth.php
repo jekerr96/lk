@@ -2,15 +2,16 @@
 	session_start();
 	include 'include/db_connect.php';
 	if((isset($_SESSION['id']) && $_SESSION["type"] == "client") || (isset($_COOKIE["user"]))){
-		if(!isset($_SESSION["id"])){
+		if(!isset($_SESSION["id"]) || $_SESSION["type"] == "manager"){
 			$id_cookie = $_COOKIE["user"];
-			$query = "SELECT id_user FROM auth_cookie WHERE id_cookie = '$id_cookie'";
+			$query = "SELECT id_client FROM auth_cookie WHERE id_cookie = '$id_cookie'";
 			$result = mysqli_query($link, $query);
 			if(mysqli_num_rows($result) != 0){
 				$row = mysqli_fetch_assoc($result);
-				$id_user = $row["id_user"];
+				$id_user = $row["id_client"];
 
 				$query = "SELECT * FROM users WHERE id = $id_user";
+				echo $query;
 				$result = mysqli_query($link, $query);
 				$row = mysqli_fetch_assoc($result);
 				$_SESSION["type"] = $row["type"];
@@ -64,7 +65,7 @@ window.location = "/"
 						$id = sha1("wervcbdsSfs".sha1($id)."gfhfgsfdpl".time());
 						$id_manager = $row["id"];
 						setcookie("user", $id, time() + (3600 * 24 * 30));
-						$query = "INSERT INTO auth_cookie(id_cookie, id_manager) VALUES('$id', '$id_manager')";
+						$query = "INSERT INTO auth_cookie(id_cookie, id_client) VALUES('$id', '$id_manager')";
 						$result = mysqli_query($link, $query);
 						if(!$result)
 							die("Произошла ошибка");
