@@ -61,7 +61,7 @@
 		$query = "INSERT INTO users(id_clients, id_subdivision, login, password, email, phone, messeger, fio, date_access, date_denied, avatar, block) VALUES($id, $subdivision, '$login', '$password', '$email', '$phone', '$messeger', '$fio', '$date_access', '$date_denied', '$avatar_name', $block)";
 		$result = mysqli_query($link, $query);
 		if($result)
-			$success = "Изменение прошло успешно";
+			$success = "Добавление прошло успешно";
 		else
 			$errors = $query."<br>".mysqli_error($link);
     }

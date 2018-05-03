@@ -355,7 +355,6 @@ $(document).ready(function(){
 			success: function(data) {
 				var id_add = data;
 				if(!isNaN(id_add)){
-					alert(masNumbers);
 					for(var i = 0; i < masNumbers.length; i++){
 						if(masNumbers[i] == 0) continue;
 						var send_data = "";
@@ -410,7 +409,14 @@ $(document).ready(function(){
 			dataType: "html",
 			cache: false,
 			success: function(data_services) {
-
+					if(data_services == 1){
+						$(".success_add_trip").html("Добавление прошло успешно");
+						$(".errors_add_trip").html("");
+					}
+					else{
+						$(".errors_add_trip").html("Произошла ошибка");
+						$(".success_add_trip").html("");
+					}
 				}
 			});
 				}

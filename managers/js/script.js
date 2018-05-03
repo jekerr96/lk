@@ -272,4 +272,46 @@ check_menu();
 					 menu.removeAttr('style');
 			 }
 	 });
+
+	 $(".del_document").click(function(){
+		 if(!confirm("Вы действительно хотите удалить документ?"))
+ 			return;
+ 		var id = $(this).attr("idd");
+		var del = $(this);
+ 		$.ajax({
+ 				type: "POST",
+ 				url: "include/delete_document.php",
+ 				data: "id=" + id,
+ 				dataType: "html",
+ 				cache: false,
+ 				success: function(data) {
+ 					if(data == 1){
+ 						$(del).parent().parent().remove();
+ 					}
+ 					else{
+ 						alert(data);
+ 					}
+ 				}
+ 			});
+	 });
+
+	 $(".take_img").click(function(){
+		 var id = $(this).attr("idt");
+		 $.ajax({
+  				type: "POST",
+  				url: "include/take_trip.php",
+  				data: "id=" + id,
+  				dataType: "html",
+  				cache: false,
+  				success: function(data) {
+  					if(data == 1){
+  						document.location.href = "show_trip.php?id=" + id;
+  					}
+  					else{
+  						alert(data);
+  					}
+  				}
+  			});
+	 })
+
 });

@@ -867,7 +867,7 @@ input.btn_submit{
 	display: inline-block;
 }
 
-.edit_image, .delete_image, .show_image{
+.edit_image, .delete_image, .show_image, .take_img{
 	margin-left: 5px;
 	margin-right: 5px;
 	width: 30px;
@@ -908,4 +908,12 @@ input.btn_submit{
 }
 .head_client{
 	color: white;
+}
+.add_files_to_trip{
+	background: white;
+    width: 270px;
+    padding: 20px;
+    border-radius: 20px;
+    display: inline-block;
+		margin-bottom: 20px;
 }

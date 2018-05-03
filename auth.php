@@ -11,7 +11,6 @@
 				$id_user = $row["id_client"];
 
 				$query = "SELECT * FROM users WHERE id = $id_user";
-				echo $query;
 				$result = mysqli_query($link, $query);
 				$row = mysqli_fetch_assoc($result);
 				$_SESSION["type"] = $row["type"];

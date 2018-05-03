@@ -1,4 +1,49 @@
-<? session_start(); ?>
+<? session_start();
+$id = $_GET["id"];
+include 'include/db_connect.php';
+if(isset($_POST["sub"])){
+	$arr = array(
+		 				 'a','b','c','d','e','f',
+						 'g','h','i','j','k','l',
+						 'm','n','o','p','r','s',
+						 't','u','v','x','y','z',
+						 'A','B','C','D','E','F',
+						 'G','H','I','J','K','L',
+						 'M','N','O','P','R','S',
+						 'T','U','V','X','Y','Z',
+						 '1','2','3','4','5','6',
+						 '7','8','9','0');
+for($i = 0; $i < 20; $i++)
+{
+	$index = rand(0, count($arr) - 1);
+	$path .= $arr[$index];
+}
+ mkdir("../documents/".$path, 0777, true);
+ for($i = 0; $i< count($_FILES["files"]["name"]); $i++){
+	 $uploadfile = "../documents/" .$path."/". iconv('utf-8', 'cp1251', $_FILES["files"]["name"][$i]);
+ 	$pathDB = $path."/". $_FILES["files"]["name"][$i];
+ if (move_uploaded_file($_FILES['files']['tmp_name'][$i], $uploadfile)){
+	 $query = "INSERT INTO documents(id_trip, path) VALUES($id, '$pathDB')";
+	 $result = mysqli_query($link, $query);
+
+	 $query = "SELECT summ_oplati, summ_k_oplate FROM trips WHERE id = $id";
+	 $result = mysqli_query($link, $query);
+	 $row = mysqli_fetch_assoc($result);
+	 if($row["summ_oplati"] >= $row["summ_k_oplate"])
+	 	$status = 5;
+	 else $status = 4;
+
+	 $query = "UPDATE trips SET id_status = $status WHERE id = $id";
+	 $result = mysqli_query($link, $query);
+	 header("Location: show_trip.php?id=".$id);
+ }
+ }
+
+
+
+}
+
+?>
 <!DOCTYPE html>
 <html lang="ru" dir="ltr">
 	<head>
@@ -14,8 +59,8 @@
 			$id = $_GET["id"];
 			$list_employee = "";
 
-			include 'include/db_connect.php';
-			$query = "SELECT trips.id as id, description, status.name as status, summ_k_oplate, summ_oplati, term, address FROM trips INNER JOIN status ON trips.id_status = status.id WHERE trips.id = $id ORDER BY trips.id DESC";
+
+			$query = "SELECT trips.id as id, description, status.name as status, summ_k_oplate, summ_oplati, term, address, id_manager, managers.fio as manager FROM trips INNER JOIN status ON trips.id_status = status.id INNER JOIN managers ON managers.id = trips.id_manager WHERE trips.id = $id ORDER BY trips.id DESC";
 			$result = mysqli_query($link, $query);
 			if(mysqli_num_rows($result) != 0){
 				?>
@@ -28,6 +73,7 @@
 			<th>Сумма оплаты</th>
 			<th>Срок оплаты</th>
 			<th>Адрес доставки документов</th>
+			<th>Менеджер</th>
 			<th>Действия</th>
 			<?
 			while($row = mysqli_fetch_assoc($result)){
@@ -63,7 +109,10 @@
 				<td>'.$oplata.'</td>
 				<td>'.$term.'</td>
 				<td>'.$row["address"].'</td>
-				<td><a href="edit_trips.php?id='.$row["id"].'"><image class="edit_image" src="images/pencil.png"/></a>
+				<td class="manager_trip">'.$row["manager"].'</td>
+				<td>
+				<img idt="'.$row["id"].'" class="take_img" src="images/plus.png" alt="Взять себе" title="Взять себе"/>
+				<a href="edit_trips.php?id='.$row["id"].'"><image class="edit_image" src="images/pencil.png"/></a>
 						<image class="delete_image del_trips" idd="'.$row["id"].'" src="images/delete.png"/>
 				</tr>
 				';
@@ -72,6 +121,33 @@
 		?>
 
 		</table>
+
+		<br>
+		<div class="add_files_to_trip">
+			<h2>Прикрепить документы</h2>
+			<form enctype="multipart/form-data" method="POST" action="">
+			<input type="file" multiple name="files[]" value="">
+			<input type="submit" name="sub" value="Прикрепить" class="btn_add" style="width: auto; border: none; display: inline-block; margin-left: 0px;">
+		</form>
+		</div>
+
+		<br>
+		<?
+			$query = "SELECT * FROM documents WHERE id_trip = $id";
+			$result = mysqli_query($link, $query);
+			if(mysqli_num_rows($result) > 0){
+				echo "<h2  class='head_type_service'>Список документов</h2><table class='table_employees'><th>Документ</th><th>Действия</th>";
+				while($row = mysqli_fetch_assoc($result)){
+					$name = substr(stristr($row["path"], "/"), 1);
+					echo "<tr>
+					<td><a href='../documents/".$row['path']."' download>".$name."</a></td>
+					<td><image class='delete_image del_document' idd='".$row['id']."' src='images/delete.png'/></td>
+					</tr>
+					";
+				}
+				echo '</table>';
+			}
+		?>
 		<br>
 		<div class="add_new_service">
 			<h2>Новая услуга</h2>

@@ -1,7 +1,6 @@
 <?
 $type = $_POST["type"];
 $query = "";
-var_dump($_POST);
 switch($type){
 	case 1:
 		$id_trips = $_POST["id_trips"];
@@ -56,6 +55,19 @@ switch($type){
 	}
 		include 'db_connect.php';
 	$result = mysqli_query($link, $query);
-	if(!$result)
-		echo $query;
+	if($result){
+		echo 1;
+		$query = "SELECT id_status FROM trips WHERE id = $id_trips";
+		$result = mysqli_query($link, $query);
+		$row = mysqli_fetch_assoc($result);
+		if($row["id_status"] == 1){
+			$status = 2;
+		}
+		else $status = $row["id_status"];
+		$query = "UPDATE trips SET id_status = $status WHERE id = $id_trips";
+		$result = mysqli_query($link, $query);
+	}
+	else{
+		echo mysqli_error($link);
+	}
 ?>

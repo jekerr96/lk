@@ -60,7 +60,27 @@
 ?>
 
 </table>
-
+<br>
+<?
+	$query = "SELECT * FROM documents WHERE id_trip = $ids";
+	$result = mysqli_query($link, $query);
+	if(mysqli_num_rows($result) > 0){
+		echo '<h2 class="head_type_service">Список документов</h2>
+		<table class="table_employees">
+			<th>Документ</th>';
+			while ($row = mysqli_fetch_assoc($result)) {
+				$name = substr(stristr($row["path"], "/"), 1);
+				echo '
+					<tr>
+					<td><a href="documents/'.$row["path"].'" download>'.$name.'</a></td>
+					</tr>
+				';
+			}
+			echo '
+		</table>
+		';
+	}
+?>
 <div id="show_trip_servies">
 	<?
 	$query = "SELECT * FROM services WHERE id_trips = $ids";
@@ -292,6 +312,7 @@
 
 		$query_employee = "SELECT surname, name, patronymic, zagran_surname, zagran_name, zagran_patronymic, series_number, zagran_term FROM employees $select";
 		?>
+		<br>
 		<table class="table_employees table_trip_avia">
 		<th>ФИО</th>
 		<th>Загран ФИО</th>
