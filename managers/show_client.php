@@ -26,7 +26,7 @@
 		include 'include/menu.php';
 	?>
 	<div class="content">
-		<a class="btn_add" href="add_user.php?id=<? echo $id ?>">Добавить</a>
+		<a class="btn_add" style="display: inline-block; width: auto;" href="add_user.php?id=<? echo $id ?>">Добавить пользователя</a>
 		<div class="show_client">
 	<?
 

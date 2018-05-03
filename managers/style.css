@@ -344,7 +344,7 @@ nav a#pull {
 .edit_employee, .delete_employee, .edit_subdivision, .delete_subdivision{
 	margin-left: 5px;
 	margin-right: 5px;
-	width: 30px;
+	width: 20px;
 }
 
 .edit_employee:hover, .delete_employee:hover, .edit_subdivision:hover, .delete_subdivision:hover{
@@ -770,7 +770,7 @@ input.btn_submit{
 
 .its_travel_agency{
 	//width: 50px;
-	height: 50px;
+	height: 20px;
 }
 
 .green_button_text {
@@ -870,7 +870,7 @@ input.btn_submit{
 .edit_image, .delete_image, .show_image, .take_img{
 	margin-left: 5px;
 	margin-right: 5px;
-	width: 30px;
+	width: 20px;
 	cursor: pointer;
 }
 

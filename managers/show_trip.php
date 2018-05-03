@@ -29,7 +29,7 @@ for($i = 0; $i < 20; $i++)
 	 $query = "SELECT summ_oplati, summ_k_oplate FROM trips WHERE id = $id";
 	 $result = mysqli_query($link, $query);
 	 $row = mysqli_fetch_assoc($result);
-	 if($row["summ_oplati"] >= $row["summ_k_oplate"])
+	 if($row["summ_oplati"] >= $row["summ_k_oplate"] && $row["summ_oplati"] != null)
 	 	$status = 5;
 	 else $status = 4;
 

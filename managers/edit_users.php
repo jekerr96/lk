@@ -16,6 +16,8 @@
 		$avatar = $_FILES["avatar"]["name"];
 		$block = $_POST["block"];
 
+		if($date_denied == "") $date_denied = "null";
+
 		if($password != ""){
 			$password = "password = '".sha1("werwer".sha1("fhFGHfdg46_ry".$password."dadgfh676YTRf_yu")."qweqwdsfdg")."',";
 		}
@@ -47,7 +49,7 @@
 			$avatar_name = "no_avatar.png";
 		}
 		$query = "UPDATE users SET id_subdivision = $subdivision, login = '$login', $password email = '$email', phone = '$phone', messeger = '$messeger',
-		fio = '$fio', date_access = '$date_access', date_denied = '$date_denied', avatar = '$avatar_name', block = $block WHERE id = $id";
+		fio = '$fio', date_access = '$date_access', date_denied = ".($date_denied == null ? NULL : $date_denied).", avatar = '$avatar_name', block = $block WHERE id = $id";
 		$result = mysqli_query($link, $query);
 		if($result)
 			$success = "Изменение прошло успешно";
