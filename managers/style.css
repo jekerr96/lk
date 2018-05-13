@@ -917,3 +917,9 @@ input.btn_submit{
     display: inline-block;
 		margin-bottom: 20px;
 }
+.block_msg{
+	color: white;
+	font-size: 22px;
+	text-align: center;
+	margin-top: 20px;
+}

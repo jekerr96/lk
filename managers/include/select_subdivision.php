@@ -1,4 +1,5 @@
 <?
+session_start();
 	$id = $_POST["id"];
 ?>
 <table class="table_employees">
@@ -8,12 +9,17 @@
 		$query = "SELECT id,name FROM subdivision WHERE id_clients = $id";
 		$result = mysqli_query($link, $query);
 		while($row = mysqli_fetch_assoc($result)){
-			echo '
-				<tr>
-				<td>'.$row["name"].'</td>
+			if($_SESSION["type"] == "administrator"){
+				$tools = '
 				<td><a href="edit_subdivision.php?id='.$row["id"].'"><image class="edit_image" src="images/pencil.png"/></a>
 				<image class="delete_image del_subdivision" idd="'.$row["id"].'" src="images/delete.png"/>
 				</td>
+				';
+			}
+			echo '
+				<tr>
+				<td>'.$row["name"].'</td>
+				'.$tools.'
 				</tr>
 			';
 		}

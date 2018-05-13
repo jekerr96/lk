@@ -1,3 +1,6 @@
+<?
+	session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,9 +13,12 @@
 <body>
 <?
 	include 'include/menu.php';
+	if($_SESSION["type"] == "administrator"){
+		echo '<a href="" class="link_add_employee"></a>';
+	}
 ?>
 <div class="content">
-	<a href="" class="link_add_employee"></a>
+
 	<div class="employees">
 		<h2 class="head_client">Клиент</h2>
 		<select class="select_employees">

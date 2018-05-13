@@ -1,7 +1,7 @@
 <?
 	session_start();
 	include 'include/db_connect.php';
-	if((isset($_SESSION['id']) && $_SESSION["type"] == "manager") || (isset($_COOKIE["manager"]))){
+	if((isset($_SESSION['id']) && ($_SESSION["type"] == "manager" || $_SESSION["type"] == "administrator")) || (isset($_COOKIE["manager"]))){
 		if(!isset($_SESSION["id"]) || $_SESSION["type"] == "client"){
 			$id_cookie = $_COOKIE["manager"];
 			$query = "SELECT id_manager FROM auth_cookie WHERE id_cookie = '$id_cookie'";

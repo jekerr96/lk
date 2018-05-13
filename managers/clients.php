@@ -44,15 +44,20 @@
 			$form_settlements = "Деньгами";
 		else
 			$form_settlements = "Баллами";
-
+			if($_SESSION["type"] == "administrator"){
+			$tools = '<a href="managers/edit_client.php?id='.$row["id"].'">
+			<img src="images/pencil.png" class="edit_client edit_image"/>
+			</a>
+			<img src="../images/delete.png" idd="'.$row["id"].'" class="delete_client delete_image"/>
+			</tr>';
+		}
 		echo '
 		<tr>
 		<td>'.$row["name"].'</td>
 		<td>'.$travel_agency.'</td>
 		<td>'.$form_settlements.'</td>
-		<td><a href="show_client.php?id='.$row["id"].'"><img class="show_image" src="images/show.png"/></a><a href="managers/edit_client.php?id='.$row["id"].'"><img src="images/pencil.png" class="edit_client edit_image"/></a><img src="../images/delete.png" idd="'.$row["id"].'" class="delete_client delete_image"/>
-		</tr>
-		';
+		<td><a href="show_client.php?id='.$row["id"].'"><img class="show_image" src="images/show.png"/></a>
+		'.$tools;
 	}
 	}
 	?>

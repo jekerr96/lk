@@ -1,7 +1,16 @@
 <?
+session_start();
  include 'include/db_connect.php';
  $id = $_GET["id"];
- if(!isset($_POST["sub"])){
+
+ $query = "SELECT id_manager FROM trips INNER JOIN services ON trips.id = services.id_trips WHERE services.id = $id";
+ $result = mysqli_query($link, $query);
+ $row = mysqli_fetch_assoc($result);
+ $myid = $_SESSION["id"];
+ if($row["id_manager"] != $myid)
+   $block = true;
+
+ if(!isset($_POST["sub"]) && !$block){
    $query = "SELECT * FROM services WHERE id = $id";
    $result = mysqli_query($link, $query);
    $row = mysqli_fetch_assoc($result);
@@ -54,7 +63,10 @@ if(isset($_POST["sub"])){
     <? include 'include/head.php'; ?>
   </head>
   <body>
-    <? include 'include/menu.php'; ?>
+    <? include 'include/menu.php';
+    if($block)
+    die("<div class='block_msg'>Этот документ принадлежит не вам, у вас нету прав на его редактирование.</div>");
+    ?>
     <div class="contact_form">
         <ul>
           <form action="" method="post" multiple>

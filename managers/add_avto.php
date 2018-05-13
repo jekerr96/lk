@@ -3,7 +3,15 @@
   include 'include/db_connect.php';
   $id = $_GET["id"];
 
-  if(isset($_POST["sub"])){
+  $query = "SELECT id_manager FROM trips WHERE id = $id";
+  $result = mysqli_query($link, $query);
+  $row = mysqli_fetch_assoc($result);
+  $myid = $_SESSION["id"];
+
+  if($row["id_manager"] != $myid)
+    $block = true;
+
+  if(isset($_POST["sub"]) && !$block){
     $id_trips = $_POST["id_trips"];
 		$type_operation = $_POST["type_operation"];
 		$point_departure = $_POST["point_departure"];
@@ -39,7 +47,10 @@
     <? include 'include/head.php'; ?>
   </head>
   <body>
-    <? include 'include/menu.php'; ?>
+    <? include 'include/menu.php';
+    if($block)
+    die("<div class='block_msg'>Этот документ принадлежит не вам, у вас нету прав на его редактирование.</div>");
+    ?>
     <div class="contact_form">
         <ul>
 

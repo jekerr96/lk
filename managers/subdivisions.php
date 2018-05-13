@@ -1,3 +1,6 @@
+<?
+	session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,8 +13,12 @@
 <body>
 <?
 	include 'include/menu.php';
+	if($_SESSION["type"] == "administrator"){
+		echo '<a href="" class="link_add_subdivision"></a>';
+	}
 ?>
-<a href="" class="link_add_subdivision"></a>
+
+
 <div class="content">
 	<div class="subdivision">
 		<h2 class="head_client">Клиент</h2>

@@ -26,7 +26,8 @@
 		include 'include/menu.php';
 	?>
 	<div class="content">
-		<a class="btn_add" style="display: inline-block; width: auto;" href="add_user.php?id=<? echo $id ?>">Добавить пользователя</a>
+	<? if($_SESSION["type"] == "administrator")	echo '
+		<a class="btn_add" style="display: inline-block; width: auto;" href="add_user.php?id=<? echo $id ?>">Добавить пользователя</a>';?>
 		<div class="show_client">
 	<?
 
@@ -52,12 +53,19 @@
 			$form_settlements = "Деньгами";
 		else
 			$form_settlements = "Баллами";
+			if($_SESSION["type"] == "administrator"){
+				$tools = '<td>
+				<a href="managers/edit_client.php?id='.$row["id"].'">
+				<img src="images/pencil.png" class="edit_client edit_image"/>
+				</a>
+				<img src="../images/delete.png" idd="'.$row["id"].'" class="delete_client delete_image"/>';
+			}
 		echo '
 		<tr>
 		<td>'.$row["name"].'</td>
 		<td>'.$travel_agency.'</td>
 		<td>'.$form_settlements.'</td>
-		<td><a href="managers/edit_client.php?id='.$row["id"].'"><img src="images/pencil.png" class="edit_client edit_image"/></a><img src="../images/delete.png" idd="'.$row["id"].'" class="delete_client delete_image"/>
+		'.$tools.'
 		</tr>
 		';
 		echo "</table>";
@@ -78,14 +86,17 @@
 						$query = "SELECT id, fio, phone, email, messeger FROM users WHERE id_subdivision = ".$row_sub['id']."";
 						$result_users = mysqli_query($link, $query);
 						while($row_users = mysqli_fetch_assoc($result_users)){
+							if($_SESSION["type"] == "administrator"){
+								$tools = '<td><a href="edit_users.php?id='.$row_users["id"].'"><image class="edit_image" src="images/pencil.png"/></a>
+				<image class="delete_image del_users" idd="'.$row_users["id"].'" src="images/delete.png"/>';
+							}
 							echo '
 								<tr>
 								<td>'.$row_users["fio"].'</td>
 								<td>'.$row_users["phone"].'</td>
 								<td>'.$row_users["email"].'</td>
 								<td>'.$row_users["messeger"].'</td>
-								<td><a href="edit_users.php?id='.$row_users["id"].'"><image class="edit_image" src="images/pencil.png"/></a>
-				<image class="delete_image del_users" idd="'.$row_users["id"].'" src="images/delete.png"/>
+								'.$tools.'
 								</tr>
 							';
 						}
