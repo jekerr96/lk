@@ -470,7 +470,7 @@ nav a#pull {
 .select_subdivision:required:valid + .form_hint::before {color:#28921f;}
 
 /* === Button Style === */
-.btn_submit, input.btn_submit{
+.btn_submit, input.btn_submit, .btn_new_add, .btn_block_back{
 	background-color: #68b12f;
 	background: -webkit-gradient(linear, left top, left bottom, from(#68b12f), to(#50911e));
 	background: -webkit-linear-gradient(top, #68b12f, #50911e);
@@ -502,11 +502,11 @@ nav a#pull {
 input.btn_submit{
 	height: 30px;
 }
-.btn_submit:hover, .btn_submit:hover{
+.btn_submit:hover, .btn_submit:hover, .btn_new_add:hover, .btn_block_back:hover{
 	opacity:.85;
 	cursor: pointer;
 }
-.btn_submit:active, .btn_submit:active{
+.btn_submit:active, .btn_submit:active, .btn_new_add:active, .btn_block_back:active{
 	border: 1px solid #20911e;
 	box-shadow: 0 0 10px 5px #356b0b inset;
 	-webkit-box-shadow:0 0 10px 5px #356b0b inset ;

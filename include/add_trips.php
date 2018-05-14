@@ -16,7 +16,7 @@
                     $query = "SELECT * FROM forms WHERE permission = 1";
                     $result = mysqli_query($link, $query);
                     while($row = mysqli_fetch_assoc($result)){
-                        echo "<option value='".$row['id']."'>".$row['name']."</option>"; 
+                        echo "<option value='".$row['id']."'>".$row['name']."</option>";
                     }
                 ?>
             </select>
@@ -36,7 +36,7 @@
             <li>
                 <h2>Новая услуга</h2>
             </li>
-            
+
             <label>Тип услуги:</label>
             <select id="type_service">
                 <option value="1">Авиабилет</option>
@@ -54,6 +54,8 @@
         </li>
         <li>
         	<div class="add_trip_submit btn_submit" type="submit">Добавить</div>
+          <div class="btn_new_add">Добавить еще</div>
+          <a class="btn_back" href="/trips"><div class="btn_block_back">Назад к списку</div></a>
         </li>
     </ul>
 

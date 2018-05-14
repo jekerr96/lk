@@ -51,6 +51,9 @@
         </li>
         <li>
         	<div class="add_employee_submit btn_submit" type="submit">Добавить</div>
+          <div class="btn_new_add">Добавить еще</div>
+          <a class="btn_back" href="/employees"><div class="btn_block_back">Назад к списку</div></a>
+
         </li>
     </ul>
 

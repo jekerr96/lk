@@ -81,6 +81,11 @@
             </li>
             <li>
             	<input type="submit" name="sub" value="Добавить" class="btn_submit">
+              <?
+              if(isset($_POST["sub"])){
+                echo '<a class="btn_back" href="/managers/trips.php><div class="btn_block_back">Назад к списку</div></a>';
+              }
+              ?>
             </li>
 
           </form>

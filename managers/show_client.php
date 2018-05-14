@@ -27,7 +27,7 @@
 	?>
 	<div class="content">
 	<? if($_SESSION["type"] == "administrator")	echo '
-		<a class="btn_add" style="display: inline-block; width: auto;" href="add_user.php?id=<? echo $id ?>">Добавить пользователя</a>';?>
+		<a class="btn_add" style="display: inline-block; width: auto;" href="add_user.php?id='.$id.'">Добавить пользователя</a>';?>
 		<div class="show_client">
 	<?
 

@@ -147,9 +147,16 @@ $(document).ready(function(){
 				else{
 					$(".errors_add_employee").html("");
 					$(".success_add_employee").html("Сотрудник успешно добавлен");
+					$(".btn_submit").css("display", "none");
+					$(".btn_new_add").css("display", "inline-block");
+					$(".btn_back").css("display", "inline-block");
 				}
 			}
 		});
+	});
+
+	$(".content").on("click", ".btn_new_add", function(){
+		location.reload(true);
 	});
 
 	$(".content").on("click", ".edit_employee_submit", function(){
@@ -246,6 +253,9 @@ $(document).ready(function(){
 				else{
 					$(".errors_add_subdivision").html("");
 					$(".success_add_subdivision").html("Подразделение успешно добавлено");
+					$(".btn_submit").css("display", "none");
+					$(".btn_new_add").css("display", "inline-block");
+					$(".btn_back").css("display", "inline-block");
 				}
 			}
 		});
@@ -412,6 +422,9 @@ $(document).ready(function(){
 					if(data_services == 1){
 						$(".success_add_trip").html("Добавление прошло успешно");
 						$(".errors_add_trip").html("");
+						$(".btn_submit").css("display", "none");
+						$(".btn_new_add").css("display", "inline-block");
+						$(".btn_back").css("display", "inline-block");
 					}
 					else{
 						$(".errors_add_trip").html("Произошла ошибка");

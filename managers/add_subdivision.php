@@ -47,6 +47,11 @@
             <li>
                 <input type="hidden" name="id" value="<?  echo $id; ?>">
             	<input type="submit" name="sub" value="Отправить" class="btn_submit">
+              <?
+              if(isset($_POST["sub"])){
+                echo '<a class="btn_back" href="/managers/subdivisions.php"><div class="btn_block_back">Назад к списку</div></a>';
+              }
+              ?>
             </li>
           </form>
         </ul>

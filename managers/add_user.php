@@ -63,6 +63,7 @@
     else{
       $avatar_name = "no_avatar.png";
     }
+    if($errors == ""){
 		$query = "INSERT INTO users(id_clients, id_subdivision, login, password, email, phone, messeger, fio, date_access, date_denied, avatar, block) VALUES ($id, $subdivision, '$login', '$password', '$email', '$phone', '$messeger', '$fio', '$date_access',".($date_denied == null ? NULL : $date_denied).", '$avatar_name', $block)";
     $result = mysqli_query($link, $query);
 		if($result)
@@ -70,6 +71,7 @@
 		else
 			$errors = $query."<br>".mysqli_error($link);
     }
+  }
 ?>
 
 <!DOCTYPE html>
@@ -157,6 +159,11 @@
             <li>
                 <input type="hidden" name="id" value="<?  echo $id; ?>">
             	<input type="submit" name="sub" value="Отправить" class="btn_submit">
+              <?
+              if(isset($_POST["sub"])){
+                echo '<a class="btn_back" href="/managers/show_client.php?id='.$id.'"><div class="btn_block_back">Назад к списку</div></a>';
+              }
+              ?>
             </li>
             </form>
         </ul>
