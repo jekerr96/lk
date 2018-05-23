@@ -917,9 +917,26 @@ input.btn_submit{
     display: inline-block;
 		margin-bottom: 20px;
 }
+
 .block_msg{
-	color: white;
-	font-size: 22px;
-	text-align: center;
-	margin-top: 20px;
+	background: white;
+  min-height: 100px;
+  width: 500px;
+  display: inline-block;
+  border-radius: 5px;
+  padding: 10px;
+	margin-bottom: 20px;
+}
+.author{
+	float: left;
+}
+.date_msg{
+	float: right;
+}
+.msg{
+	display: block;
+  margin-top: 26px;
+  text-align: left;
+  border-top: 1px dashed black;
+  padding-top: 9px;
 }

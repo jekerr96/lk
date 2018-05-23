@@ -435,6 +435,40 @@ for($i = 0; $i < 20; $i++)
 
 			}
 		?>
+		<h2 class="head_type_service">Сообщения</h2>
+		<div class="block_trips_msg">
+		<?
+			$query = "SELECT id_author, its_manager, id_trip, msg, date_msg FROM msg_trips WHERE id_trip = $id";
+			$result = mysqli_query($link, $query);
+			while($row = mysqli_fetch_assoc($result)){
+				$author = $row['id_author'];
+				if($row["its_manager"] == 0){
+					$query_fio = "SELECT fio FROM users WHERE id = $author";
+				}
+				else{
+					$query_fio = "SELECT fio FROM managers WHERE id = $author";
+				}
+				$result_fio = mysqli_query($link, $query_fio);
+				$row_fio = mysqli_fetch_assoc($result_fio);
+				$date = date_create($row["date_msg"]);
+				echo '
+				<br>
+				<div class="block_msg">
+					<span class="author">'.$row_fio["fio"].'</span>
+					<span class="date_msg">'.date_format($date, "d.m.y G:i:s").'</span>
+					<span class="msg">'.$row["msg"].'</span>
+				</div>
+				';
+
+			}
+		?>
+		</div>
+		<div class="block_write_msg">
+				<textarea class="msg_area" rows="8" cols="80" placeholder="Напишите сообщение"></textarea>
+				<br>
+				<input type="hidden" class="ids_id" value="<? echo $id; ?>">
+				<div class="add_msg_submit btn_submit" type="submit">Отправить</div>
+		</div>
 		</div>
 
 		</div>

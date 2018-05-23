@@ -460,4 +460,18 @@ $(document).ready(function(){
 	     }
 	 });
 
+
+	 $(".content").on("click", ".add_msg_submit", function(){
+		 $.ajax({
+ 			type: "POST",
+ 			url: "include/add_msg.php",
+ 			data: "msg=" + $(".msg_area").val() + "&author=" + $(".author_id").val() + "&trip=" + $(".ids_id").val(),
+ 			dataType: "html",
+ 			cache: false,
+ 			success: function(data) {
+ 				$(".block_trips_msg").append(data);
+				$(".msg_area").val("");
+ 			}
+ 		});
+	 });
 });
