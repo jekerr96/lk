@@ -950,3 +950,15 @@ input.btn_submit{
 	max-height: 80px;
 	overflow-y: auto;
 }
+.buhgalter_trip{
+	cursor: pointer;
+}
+.payment{
+	text-align: center;
+}
+.table_buhgalter_trips{
+	display: inline-block;
+}
+#show_trip_servies{
+	text-align: center;
+}

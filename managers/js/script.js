@@ -278,6 +278,9 @@ check_menu();
 			case "personal":
 					$(".menu_personal").addClass("current");
 				break;
+			case "payment":
+					$(".menu_payment").addClass("current");
+				break;
 			default:
 
 		}
@@ -349,5 +352,10 @@ check_menu();
 				$(".msg_area").val("");
 			}
 		});
+	 });
+
+	 $(".buhgalter_trip").click(function(){
+		 var id = $(this).attr("ids");
+		 document.location.href = "edit_payment.php?id=" + id;
 	 });
 });
