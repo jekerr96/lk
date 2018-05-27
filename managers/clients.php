@@ -45,7 +45,7 @@
 		else
 			$form_settlements = "Баллами";
 			if($_SESSION["type"] == "administrator"){
-			$tools = '<a href="managers/edit_client.php?id='.$row["id"].'">
+			$tools = '<a href="edit_client.php?id='.$row["id"].'">
 			<img src="images/pencil.png" class="edit_client edit_image"/>
 			</a>
 			<img src="../images/delete.png" idd="'.$row["id"].'" class="delete_client delete_image"/>

@@ -210,7 +210,9 @@ nav a#pull {
 }
 
 /* colors */
-
+.personal{
+	text-align: center;
+}
 
 .green_add_employee {
 	background: rgb(143,200,0);

@@ -233,6 +233,27 @@ $(document).ready(function(){
 			});
 	});
 
+	$(".del_personal").click(function(){
+		if(!confirm("Вы действительно хотите удалить сотрудника?"))
+			return;
+		var id = $(this).attr("idd");
+		$.ajax({
+				type: "POST",
+				url: "include/delete_personal.php",
+				data: "id=" + id,
+				dataType: "html",
+				cache: false,
+				success: function(data) {
+					if(data == 1){
+						document.location.href = "personal.php";
+					}
+					else{
+						alert(data);
+					}
+				}
+			});
+	});
+
 check_menu();
 	function check_menu(){
 		switch (page) {
@@ -253,6 +274,9 @@ check_menu();
 				break;
 			case "contacts":
 					$(".menu_contacts").addClass("current");
+				break;
+			case "personal":
+					$(".menu_personal").addClass("current");
 				break;
 			default:
 
