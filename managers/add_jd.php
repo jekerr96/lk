@@ -90,19 +90,21 @@
                   <input type="text" name="coment" placeholder="Комментарий"/>
               </li>
               <li>
-              	<label>Сотрудники:</label>
-              	<select name="list_employee[]" multiple="multiple" size="1" style="height: 100px">
-              		<?
-              			$query = "SELECT employees.id as id, surname, name, patronymic, series_number FROM employees INNER JOIN users ON users.id = employees.id_users INNER JOIN trips ON trips.id_users = users.id WHERE trips.id = $id";
-              			$result = mysqli_query($link, $query);
-              			while($row = mysqli_fetch_assoc($result)){
-              				echo '
-              				<option value="'.$row["id"].'">'.$row["surname"]." ".$row["name"]." ".$row["patronymic"]." ".$row["series_number"].'</option>
-              				';
-              			}
-              		?>
-              	</select>
-              	<span class="form_hint">Зажмите Ctrl для выбора нескольких</span>
+                <label for="">Сотрудники</label>
+                <div class="block_select_employee">
+                  <?
+                    $query = "SELECT employees.id as id, surname, name, patronymic, series_number FROM employees INNER JOIN users ON users.id = employees.id_users INNER JOIN trips ON trips.id_users = users.id WHERE trips.id = $id";
+                    $result = mysqli_query($link, $query);
+                    while($row = mysqli_fetch_assoc($result)){
+                      echo '
+                      <label class="label_employee" style="float: none; width: auto;" for="emplCheckbox'.$row["id"].'">'.$row["surname"]." ".$row["name"]." ".$row["patronymic"]." ".$row["series_number"].'</label>
+                      <input id="emplCheckbox'.$row["id"].'" type="checkbox" class="list_employee" name="list_employee[]" value="'.$row["id"].'"/>
+
+                      <br>
+                      ';
+                    }
+                  ?>
+                </div>
               </li>
             <li>
               <span class="errors_add_employee"><? echo $errors; ?></span>

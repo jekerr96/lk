@@ -3,7 +3,7 @@
 	$id = $_SESSION["id"];
 ?>
 <div class="block_servicesReplace">
-    
+
 <li>
 	<h2>Авиабилет</h2>
     <img src="../images/delete.png" class="del_services" id_del="Replace"/>
@@ -45,7 +45,23 @@
             <label>Срок бронирования:</label>
             <input type="date" id="term_bookingReplace" placeholder="Срок бронирования"/>
         </li>
-<li>
+				<li>
+					<label for="">Сотрудники</label>
+					<div class="block_select_employee">
+						<?
+						include 'db_connect.php';
+							$query = "SELECT id, surname, name, patronymic, series_number FROM employees WHERE id_users = $id ORDER BY surname, name, patronymic";
+							$result = mysqli_query($link, $query);
+							while($row = mysqli_fetch_assoc($result)){
+								echo '
+								<label class="label_employee" style="float: none; width: auto;" for="emplCheckbox'.$row["id"].'">'.$row["surname"]." ".$row["name"]." ".$row["patronymic"]." ".$row["series_number"].'</label>
+								<input id="emplCheckbox'.$row["id"].'" type="checkbox" class="list_employeeReplace" name="list_employeeReplace[]" value="'.$row["id"].'"/>
+								';
+							}
+						?>
+					</div>
+				</li>
+<!--<li>
 	<label>Сотрудники:</label>
 	<select id="list_employeeReplace" multiple="multiple" size="1" style="height: 100px">
 		<?
@@ -60,7 +76,7 @@
 		?>
 	</select>
 	<span class="form_hint">Зажмите Ctrl для выбора нескольких</span>
-</li>
+</li>!-->
 <li>
             <label>Специальный багаж:</label>
             <input type="text" id="special_luggageReplace" placeholder="специальный багаж"/>

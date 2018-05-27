@@ -342,6 +342,7 @@ nav a#pull {
 }
 
 /* === Form Elements === */
+
 .contact_form label {
 	width:150px;
 	margin-top: 3px;
@@ -388,9 +389,17 @@ nav a#pull {
 	box-shadow: 0 0 5px #d45252;
 	border-color: #b03535
 }
+input[type="checkbox"]{
+	width: auto;
+	height: auto;
+}
 .contact_form select{
 	height: 35px;
 	width: 260px;
+}
+.block_select_employee{
+	max-height: 80px;
+	overflow-y: auto;
 }
 
 /* === Form hints === */
@@ -494,6 +503,7 @@ div.btn_submit:active, div.btn_submit:active, .btn_new_add:active, .btn_block_ba
 	padding:3px;
 }
 }
+
 /* */
 
 /* Подразделения */

@@ -49,19 +49,21 @@
         </li>
 </li>
 <li>
-	<label>Сотрудники:</label>
-	<select id="list_employeeReplace" multiple="multiple" size="1" style="height: 100px">
+	<label for="">Сотрудники</label>
+	<div class="block_select_employee">
 		<?
 		include 'db_connect.php';
-			$query = "SELECT id, surname, name, patronymic, series_number FROM employees WHERE id_users = $id";
+			$query = "SELECT id, surname, name, patronymic, series_number FROM employees WHERE id_users = $id ORDER BY surname, name, patronymic";
 			$result = mysqli_query($link, $query);
 			while($row = mysqli_fetch_assoc($result)){
 				echo '
-				<option value="'.$row["id"].'">'.$row["surname"]." ".$row["name"]." ".$row["patronymic"]." ".$row["series_number"].'</option>
+				<label class="label_employee" style="float: none; width: auto;" for="emplCheckbox'.$row["id"].'">'.$row["surname"]." ".$row["name"]." ".$row["patronymic"]." ".$row["series_number"].'</label>
+				<input id="emplCheckbox'.$row["id"].'" type="checkbox" class="list_employeeReplace" name="list_employeeReplace[]" value="'.$row["id"].'"/>
+
+				<br>
 				';
 			}
 		?>
-	</select>
-	<span class="form_hint">Зажмите Ctrl для выбора нескольких</span>
+	</div>
 </li>
 </div>

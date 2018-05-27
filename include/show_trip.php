@@ -311,6 +311,7 @@
 		else $select = substr($select, 0, -3);
 
 		$query_employee = "SELECT surname, name, patronymic, zagran_surname, zagran_name, zagran_patronymic, series_number, zagran_term FROM employees $select";
+		echo $query_employee;
 		?>
 		<br>
 		<table class="table_employees table_trip_avia">

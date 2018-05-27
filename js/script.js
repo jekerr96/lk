@@ -368,6 +368,14 @@ $(document).ready(function(){
 					for(var i = 0; i < masNumbers.length; i++){
 						if(masNumbers[i] == 0) continue;
 						var send_data = "";
+						var ids_employee = "";
+						var elems = $(".list_employee" + masNumbers[i]);
+    				var elemsTotal = elems.length;
+    				for(var j=0; j<elemsTotal; j++){
+							if($(elems[j]).prop('checked'))
+							ids_employee += $(elems[j]).val() + ",";
+						}
+						alert(ids_employee);
 						switch($("#type" + masNumbers[i]).val()){
 							case "1":
 								var type_operation = $("#type_operation" + masNumbers[i]).val();
@@ -377,7 +385,7 @@ $(document).ready(function(){
 								var destination = $("#destination" + masNumbers[i]).val();
 								var coment = $("#coment" + masNumbers[i]).val();
 								var term_booking = $("#term_booking" + masNumbers[i]).val();
-								var list_employee = $("#list_employee" + masNumbers[i]).val();
+								var list_employee = ids_employee;
 								var special_luggage = $("#special_luggage" + masNumbers[i]).val();
 								send_data = "id_trips=" + id_add + "&type=1" + "&type_operation=" + type_operation + "&booking_class=" + booking_class + "&point_departure=" + point_departure + "&date_departure=" + date_departure + "&description=" + description + "&coment=" + coment + "&term_booking=" + term_booking + "&list_employee=" + list_employee + "&special_luggage=" + special_luggage;
 								break;

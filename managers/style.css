@@ -15,7 +15,7 @@ background-size:16px 16px;
 nav {
     height: 40px;
     width: 100%;
-    background: #455868;
+    background: linear-gradient(0deg, #212020, #788890);
     font-size: 11pt;
     font-family: 'PT Sans', Arial, sans-serif;
     font-weight: bold;
@@ -75,7 +75,7 @@ nav li:last-child a {
     border-right: 0;
 }
 nav a:hover, nav a:active {
-    background-color: #8c99a4;
+	background: linear-gradient(0deg, #676767, #7196a9);
 }
 nav a#pull {
     display: none;
@@ -390,6 +390,7 @@ nav a#pull {
 }
 
 /* === Form Elements === */
+
 .contact_form label {
 	width:150px;
 	margin-top: 3px;
@@ -440,7 +441,10 @@ nav a#pull {
 	height: 35px;
 	width: 260px;
 }
-
+input[type="checkbox"]{
+	width: auto;
+	height: auto;
+}
 /* === Form hints === */
 .form_hint {
 	background: #d45252;
@@ -939,4 +943,8 @@ input.btn_submit{
   text-align: left;
   border-top: 1px dashed black;
   padding-top: 9px;
+}
+.block_select_employee{
+	max-height: 80px;
+	overflow-y: auto;
 }

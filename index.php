@@ -23,7 +23,6 @@
 			<li class="employees"><a href="/employees">Сотрудники</a></li>
 			<li class="subdivision"><a href="/subdivision">Подразделения</a></li>
 			<li class="trips"><a href="/trips">Деловые поездки</a></li>
-			<li class="contacts"><a href="/contacts">Контакты</a></li>
 			<li class="exit"><a attr="exit" href="/exit.php">Выход</a></li>
 			<!--<li><div><img class="avatar" src="images/avatars/<? echo $_SESSION['avatar']; ?>"/><span class="fio"><? echo $_SESSION["fio"]; ?></span></div></li>!-->
     </ul>
