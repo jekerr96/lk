@@ -8,6 +8,7 @@
    $description = $row["description"];
    $form = $row["id_form"];
    $term = $row["term"];
+   $summa_oplati = $row["summ_k_oplati"];
    $address = $row["address"];
  }
 
@@ -17,9 +18,10 @@ if(isset($_POST["sub"])){
   $description = $_POST["description"];
   $form = $_POST["form"];
   $term = $_POST["term"];
+  $summa_oplati = $_POST["summ_k_oplati"];
   $address = $_POST["address"];
 
-  $query = "UPDATE trips SET description = '$description', id_form = $form, term = '$term', address = '$address' WHERE id = $id";
+  $query = "UPDATE trips SET description = '$description', id_form = $form, term = '$term', address = '$address', summ_k_oplate = $summa_oplati WHERE id = $id";
   $result = mysqli_query($link, $query);
   if($result){
     $success = "Изменение прошло успешно";
@@ -70,6 +72,10 @@ if(isset($_POST["sub"])){
             <li>
                 <label>Срок оплаты:</label>
                 <input type="date" name="term" placeholder="Срок оплаты" value="<? echo $term; ?>"/>
+            </li>
+            <li>
+                <label>Сумма к оплате:</label>
+                <input type="number" step="0.01" name="summ_k_oplati" placeholder="Сумма к оплате" value="<? echo $summa_oplati; ?>"/>
             </li>
             <li>
                 <label>Адрес доставки документов:</label>

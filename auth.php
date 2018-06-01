@@ -2,7 +2,7 @@
 	session_start();
 	include 'include/db_connect.php';
 	if((isset($_SESSION['id']) && $_SESSION["type"] == "client") || (isset($_COOKIE["user"]))){
-		if(!isset($_SESSION["id"]) || $_SESSION["type"] == "manager"){
+		if(!isset($_SESSION["id"]) || $_SESSION["type"] == "manager" || $_SESSION["type"] == "administrator" || $_SESSION["type"] == "buhgalter"){
 			$id_cookie = $_COOKIE["user"];
 			$query = "SELECT id_client FROM auth_cookie WHERE id_cookie = '$id_cookie'";
 			$result = mysqli_query($link, $query);

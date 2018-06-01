@@ -42,7 +42,7 @@
                 <option value="1">Авиабилет</option>
                 <option value="2">Железнодорожный билет</option>
                 <option value="3">Автобилет</option>
-                <option value="4">Гостинница</option>
+                <option value="4">Гостиница</option>
             </select>
         </li>
         <li>

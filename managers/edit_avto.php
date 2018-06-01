@@ -53,7 +53,7 @@ if(isset($_POST["sub"])){
 <html lang="ru" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Авиабилет</title>
+    <title>Автобилет</title>
     <script>var page = "trip";</script>
     <? include 'include/head.php'; ?>
   </head>

@@ -155,7 +155,7 @@ for($i = 0; $i < 20; $i++)
 				<option value="1">Авиабилет</option>
 				<option value="2">Автобилет</option>
 				<option value="3">Железнодорожный билет</option>
-				<option value="4">Гостинница</option>
+				<option value="4">Гостиница</option>
 			</select>
 			<br>
 			<div class="btn_add_new_service btn_add" style="display: inline-block; margin-left: 0px;" idt="<? echo $id; ?>">
@@ -181,7 +181,7 @@ for($i = 0; $i < 20; $i++)
 						$type = "Автобилет";
 						break;
 					case 4:
-						$type = "Гостинница";
+						$type = "Гостиница";
 						break;
 				}
 				echo "<h2 class='head_type_service'>$type</h2>";

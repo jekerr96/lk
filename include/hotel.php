@@ -4,7 +4,7 @@
 ?>
 <div class="block_servicesReplace">
 <li>
-	<h2>Гостинница</h2>
+	<h2>Гостиница</h2>
     <img src="../images/delete.png" class="del_services" id_del="Replace"/>
 </li>
 <li>

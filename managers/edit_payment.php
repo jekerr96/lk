@@ -1,21 +1,24 @@
 <? session_start();
 $id = $_GET["id"];
 include 'include/db_connect.php';
+
+$query = "SELECT summ_oplati, summ_k_oplate, id_status FROM trips WHERE id = $id";
+$result = mysqli_query($link, $query);
+$row = mysqli_fetch_assoc($result);
+
 if(isset($_POST["sub"])){
   $payment = $_POST["payment"];
+  if($row["summ_k_oplate"] <= $payment && $row["id_status"] == 4)
+    $status = 5;
+  else $status = $row["status"];
 
-  $query = "UPDATE trips SET summ_oplati = $payment WHERE id = $id";
+  $query = "UPDATE trips SET summ_oplati = $payment, id_status = $status WHERE id = $id";
   $result = mysqli_query($link, $query);
   if($result)
     $header = true;
     else mysqli_error($link);
 
-  $query = "SELECT summ_oplati, summ_k_oplate FROM trips WHERE id = $id";
-  $result = mysqli_query($link, $query);
-  $row = mysqli_fetch_assoc($result);
-  if($row["summ_oplati"] >= $row["summ_k_oplate"] && $row["summ_oplati"] != null)
-   $status = 5;
-  else $status = 4;
+
 
   if($header) header("Location: edit_payment.php?id=".$id);
 }
@@ -24,7 +27,7 @@ if(isset($_POST["sub"])){
 <html lang="ru" dir="ltr">
 	<head>
 		<meta charset="utf-8">
-		<title>Деловая поездка</title>
+		<title>Оплата</title>
 		<script>var page = "trip";</script>
 		<? include 'include/head.php'; ?>
 	</head>
@@ -140,7 +143,7 @@ if(isset($_POST["sub"])){
 						$type = "Автобилет";
 						break;
 					case 4:
-						$type = "Гостинница";
+						$type = "Гостиница";
 						break;
 				}
 				echo "<h2 class='head_type_service'>$type</h2>";

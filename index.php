@@ -1,6 +1,6 @@
 <?
 	session_start();
-	if(!isset($_SESSION["id"]) || $_SESSION["type"] == "manager")
+	if(!isset($_SESSION["id"]) || $_SESSION["type"] == "manager" || $_SESSION["type"] == "administrator" || $_SESSION["type"] == "buhgalter")
 	{
 		header("Location: /auth.php");
 	}

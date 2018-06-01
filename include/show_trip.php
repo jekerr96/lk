@@ -99,7 +99,7 @@
 				$type = "Автобилет";
 				break;
 			case 4:
-				$type = "Гостинница";
+				$type = "Гостиница";
 				break;
 		}
 		echo "<h2 class='head_type_service'>$type</h2>";

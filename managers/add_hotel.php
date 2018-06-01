@@ -43,7 +43,7 @@
 <html lang="ru" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Гостинница</title>
+    <title>Гостиница</title>
     <script>var page = "trip";</script>
     <? include 'include/head.php'; ?>
   </head>
@@ -56,7 +56,7 @@
         <ul>
 
     <li>
-    	<h2>Гостинница</h2>
+    	<h2>Гостиница</h2>
     </li>
     <form class="" action="" method="post">
       <li style="border-bottom: none;">
