@@ -1,4 +1,8 @@
 <?
+session_start();
+if(!isset($_SESSION["id"]) || $_SESSION["type"] == "client" || $_SESSION["type"] != "administrator"){
+die("У вас нет прав доступа");
+}
 $id = $_GET["id"];
 include 'include/db_connect.php';
 if(isset($_POST["sub"])){

@@ -1,3 +1,9 @@
+<?
+if(!isset($_SESSION["id"]) || $_SESSION["type"] == "client"){
+die("У вас нет прав доступа");
+}
+?>
+
 <div class="header">
 	<nav class="clearfix">
 <ul class="clearfix">

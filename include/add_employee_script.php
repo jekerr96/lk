@@ -1,5 +1,8 @@
 <?
 	session_start();
+	if($_SERVER["REQUEST_METHOD"] != "POST" || !isset($_SESSION["id"] || $_SESSION["type"] != "client")){
+	die("У вас нет прав доступа");
+}
 	$id = $_SESSION["id"];
 	$errors = "";
 	$add = "";
@@ -21,7 +24,7 @@
 	if($place_birth == "") $errors .= "Не указано место рождения";
 
 	if($errors != "")
-		die($errors); 
+		die($errors);
 
 	if($zagran_surname != "") $add .=  ", " + $zagran_surname;
 	else $add .= ", NULL";

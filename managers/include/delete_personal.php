@@ -1,4 +1,5 @@
 <?
+session_start();
 	$id = $_POST["idd"];
 
 	include 'db_connect.php';

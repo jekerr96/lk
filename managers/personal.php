@@ -1,5 +1,8 @@
 <?
   session_start();
+  if(!isset($_SESSION["id"]) || $_SESSION["type"] == "client"){
+  die("У вас нет прав доступа");
+  }
   if($_SESSION["type"] != "administrator")
     die("У вас нет доступа");
   include 'include/db_connect.php';

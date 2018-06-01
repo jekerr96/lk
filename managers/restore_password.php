@@ -1,5 +1,8 @@
 <?
 	session_start();
+	if(!isset($_SESSION["id"]) || $_SESSION["type"] == "client"){
+  die("У вас нет прав доступа");
+  }
 	if(isset($_SESSION['id'])){
 		//header("Location: /");
 	}
